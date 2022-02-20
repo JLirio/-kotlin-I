@@ -3,49 +3,54 @@ fun main() {
     println()
     println("Bem vindo ao Bytebank");
     println("________________")
-    val contaAlex = Conta("Alex", 1001)
-    contaAlex.deposita(300.0)
+//    testaComportamentoConta()
 
-    val contaFran = Conta("Fran", 1000)
-    contaFran.deposita(200.0)
+    val alex = Funcionario(
+        nome = "Alex",
+        cpf = "222.222.222-22",
+        salario = 1100.0,
 
-    println(contaAlex.titular);
-    println(contaAlex.numero);
-    println(contaAlex.saldo);
+    )
+    println("nome ${alex.nome}")
+    println("cpf ${alex.cpf}")
+    println("salario ${alex.salario}")
+    println("bonificação ${alex.bonificacao}")
     println("________________")
 
-    println(contaFran.titular);
-    println(contaFran.numero);
-    println(contaFran.saldo);
+    val fran = Gerente(
+        nome = "Francielli",
+        cpf = "111.111.111-11",
+        salario = 2100.0,
+        senha = 1234
 
+        )
+    println("nome: ${fran.nome}")
+    println("cpf: ${fran.cpf}")
+    println("salario: ${fran.salario}")
+    println("bonificação: ${fran.bonificacao}")
+    println("autenticação:  ${fran.autentica(1234)}")
     println("________________")
-    println("depositado na conta do Alex:")
-    contaAlex.deposita(1000.0)
-    println(contaAlex.saldo)
-    println("depositado na conta do Fran:")
-    contaFran.deposita(600.0)
-    println(contaFran.saldo)
+    val gui = Diretor(
+        nome = "Gui",
+        cpf = "333.333.333-33",
+        salario = 4000.0,
+        senha = 4000,
+        plr = 200.0
+    )
 
-    println("_______________________")
-    println("saque na conta do Fran:")
-    contaFran.saca(400.0)
-    println(contaFran.saldo)
-    println("saque  na conta do Alex:")
-    contaAlex.saca(400.0)
-    println(contaAlex.saldo)
-
-    println("_______________________")
-    println("Tranferencia na conta da Fran para o Alex:")
-
-    if (contaAlex.transfere(300.0, contaFran)) {
-        println("Transferencia bem sucedida!")
+    println("nome ${gui.nome}")
+    println("cpf ${gui.cpf}")
+    println("salario ${gui.salario}")
+    println("bonificação ${gui.bonificacao}")
+    println("plr ${gui.plr}")
+    if(gui.autentica(4000)){
+        println("autenticou com sucesso")
     } else {
-        println("Falha na transferencia!!!")
+        println("falha na autentição")
     }
-    println(contaAlex.saldo)
+    println("________________")
 
 
 }
-
 
 

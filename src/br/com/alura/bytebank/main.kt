@@ -1,8 +1,6 @@
 fun main() {
     testaContasDiferentes()
 
-
-
 }
 
 
